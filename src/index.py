@@ -6,7 +6,7 @@ import csv
 
 bot = commands.Bot(command_prefix='!')
 lista = []
-with open('C:/Users/Manu/Documents/cursos/disc_bot/src/form_Prueba.csv', encoding='utf-8') as f:
+with open('C:/Users/Manu/Documents/cursos/disc_bot/src/HackLatam.csv', encoding='utf-8') as f:
     reader = csv.reader(f)
     lista = list(reader)
 
@@ -23,9 +23,9 @@ async def usuario(ctx, email):
         await ctx.send('Tienes que poner algo')
     else:
         for usuario_registrado in lista:
-            if usuario_registrado[2] == email:
+            if usuario_registrado[10] == email:
                 await ctx.send('Encontrado')
-                await ctx.send('Hola '+ usuario_registrado[0] +'. Su cargo es: '+ usuario_registrado[4])
+                await ctx.send('Hola '+ usuario_registrado[7] +'. Su Escuela es: '+ usuario_registrado[13])
                 if usuario_registrado[4] != 'TestR':
                     role = discord.utils.get(email.server.roles, name= 'TestR')
                     await ctx.add_roles(email, role)
