@@ -6,7 +6,7 @@ import csv
 
 bot = commands.Bot(command_prefix='!')
 lista = []
-with open('C:/Users/Manu/Documents/cursos/disc_bot/src/HackLatam.csv', encoding='utf-8') as f:
+with open('C:/Ruta', encoding='utf-8') as f:
     reader = csv.reader(f)
     lista = list(reader)
 
@@ -45,4 +45,4 @@ async def usuario(ctx, email):
 async def on_ready():
     print('READY!')
 
-bot.run('TOKEN')
+bot.run('')
